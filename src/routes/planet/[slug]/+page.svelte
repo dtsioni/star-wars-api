@@ -50,11 +50,17 @@
     <th>Population:</th>
     <td>{data.post.planetInfo.population}</td>
   </tr>
+
+  <tr>
+    <th>Residents:</th>
+    <td>{data.post.residents.map(name => name = " " + name) + (data.post.residents.length == 0 ? "None" : "")}</td>
+  </tr>
 </table>
 
 <h3>Select Another Planet</h3>
 <div class="submenu">
-	{#each Array.from(Array(61).keys()) as section}
-		<a href="/planet/{section}">{section} </a>
+	{#each Array.from(Array(60).keys()).map(key => key += 1) as section}
+		<a href="/planet/{section}">{section}</a>
+		<spacer width=50 />
 	{/each}
 </div>
