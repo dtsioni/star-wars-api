@@ -5,7 +5,7 @@ export async function load({ params }) {
     let body = await fetch(foo).then(res => res?.json?.());
 	return {
 		post: {
-			planetName: body.name
+			planetInfo: body
 		}
 	};
 }
